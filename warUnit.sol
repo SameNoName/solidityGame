@@ -11,12 +11,6 @@ contract warUnit is gameObject {
     baseStation baseStationAddress;
     int attackPower;
 
-    function linkWithBase(baseStation bs) public
-    {
-        tvm.accept();
-        baseStationAddress = bs;
-        bs.addWarUnit(this);
-    }
     function attack(IGameObject target) public
     {
         tvm.accept();
@@ -45,11 +39,11 @@ contract warUnit is gameObject {
         }
     }
 
-    constructor(/*baseStation bs*/) public {
+    constructor(baseStation bs) public {
         require(tvm.pubkey() != 0, 101);
         require(msg.pubkey() == tvm.pubkey(), 102);
-        //baseStationAddress = bs;
-        //bs.addWarUnit(this);
+        baseStationAddress = bs;
+        bs.addWarUnit(this);
         getDefencePower();
         getAttackPower();
         tvm.accept();

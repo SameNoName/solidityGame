@@ -6,13 +6,6 @@
 		{
 			"name": "constructor",
 			"inputs": [
-			],
-			"outputs": [
-			]
-		},
-		{
-			"name": "linkWithBase",
-			"inputs": [
 				{"name":"bs","type":"address"}
 			],
 			"outputs": [

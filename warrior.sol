@@ -19,4 +19,6 @@ contract warrior is warUnit{
         tvm.accept();
         attackPower = 4;
     }
+
+    constructor(baseStation bs) warUnit(bs) public {}
 }

@@ -19,4 +19,6 @@ contract archer is warUnit {
         tvm.accept();
         attackPower = 5;
     }
+    
+    constructor(baseStation bs) warUnit(bs) public {}
 }
